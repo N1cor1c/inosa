@@ -26,11 +26,11 @@
             </div>
 <!------------- SIDEBAR ------------->
             <div class="sidebar">
-                <a class="active" href="./index.html">
+                <a href="./index.html">
                     <span class="material-symbols-sharp">home</span>
                     <h3>Home</h3>
                 </a>
-                <a href="./dashboard.html">
+                <a class="active" href="./dashboard.html">
                       <span class="material-symbols-sharp">dashboard</span>
                       <h3>Dashboard</h3>
                 </a>
@@ -114,35 +114,58 @@
                       </form>
                 </div>
             </div>
-            <h1>Home</h1>
+            <h1 id="guild-name"></h1>
 <!------------- CARDS ------------->
-            <div class="insights twogrid">
-              <div class="hello bg">
-                <span class="material-symbols-sharp">waving_hand</span>
-                <h3 id="username">Welcome</h3>
-                <h3></h3>
-              </div>
-              <div class="hello experience bg">
-                <span class="material-symbols-sharp">public</span>
-                <h3>Guilds</h3>
-                <h3></h3>
-              </div>
-              <div class="hello public bg">
-                <span class="material-symbols-sharp">conditions</span>
-                <h3>Users</h3>
-                <h3></h3>
-              </div>
-              <div class="hello econome bg">
-                <span class="material-symbols-sharp">account_balance</span>
-                <h3>Economy</h3>
-                <h3></h3>
-              </div>
-              <div class="hello bg">
-                <span class="material-symbols-sharp">gavel</span>
-                <h3>Moderation</h3>
-                <h3></h3>
-              </div>
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-symbols-sharp">group</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Members</h3>
+                            <h1 class="bg" id="members">0</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <div class="experience">
+                    <span class="material-symbols-sharp">science</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Experience</h3>
+                            <h1 class="bg" id="experiences">0</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <div class="econome">
+                    <span class="material-symbols-sharp">attach_money</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Cash</h3>
+                            <h1 class="bg" id="cash">0</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div> 
             </div>
+<!------------- RECENT orders ------------->
+             <div class="recent-orders">
+                <h2>Recent Orders</h2>
+                <table class="bg">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <a href="#history:id">Show All</a>
+             </div>
         </main>
 <!-------------------------- RIGHTS -------------------------->
         <div class="right">
@@ -165,11 +188,18 @@
                     </div>
                 </div>
             </div>
+<!------------- RECENT updates ------------->
+            <div class="recent-updates">
+                <h2>Recent Update</h2>
+                <div class="updates bg">
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="./data.js"></script>
     <script src="./global.js"></script>
+    <script src="./guilds.js"></script>
     
 </body>
 </html>

@@ -1,14 +1,13 @@
 const sideMenu = document.querySelector('aside')
+const formReport = document.querySelector('#reports')
 const menuBtn = document.querySelector('#menu-btn')
 const closeBtn = document.querySelector('#close-btn')
+const closeBtnFrm = document.querySelector('#close-btn-form')
 const themeToggler = document.querySelector('.theme-toggler')
 
 var today  = new Date();
 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-function randomIntFromInterval(min, max) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+var filename = window.location.pathname.split("/").pop().split(".").shift()
 
 // show Sidebar
 menuBtn.addEventListener('click', () => {
@@ -18,6 +17,10 @@ menuBtn.addEventListener('click', () => {
 // close Sidebar
 closeBtn.addEventListener('click', () => {
     sideMenu.style.display = 'none';
+})
+
+closeBtnFrm.addEventListener('click', () => {
+    formReport.style.display = 'none';
 })
 
 // change theme
@@ -34,57 +37,36 @@ themeToggler.addEventListener('click', () => {
     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 })
 
-// fill Actions in table
-Orders.forEach(order => {
-    const tr = document.createElement('tr');
-    const trContent = `
-                        <td >${order.username}</td>
-                        <td >${order.userid}</td>
-                        <td >${order.date}</td>
-                        <td class="${order.shipping === 'Sell' ? 'danger' : 'primary'}">${order.shipping}</td>
-                        <td class="primary">${order.roleName}</td>
-    `;
-    tr.innerHTML = trContent;
-    document.querySelector('table tbody').appendChild(tr);
-
-});
-// fill Actions in table
-Updates.forEach(message => {
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('update')
-    const messages = `
-    
-        <div class="profile-photo">
-            <img loading="lazy" id='update-img' src="${message.avatar}">
-        </div>
-        <div class="message">
-            <p><b>${message.username}</b> ${message.content}</p>
-            <small class="text-muted">${today.toLocaleDateString("en-US", options)}</small>
-        </div>
-    `;
-    messageDiv.innerHTML = messages;
-    document.querySelector('[class="recent-updates"] [class="updates bg"]').appendChild(messageDiv);
-});
-
-
-
 User.forEach(user => {
-    document.getElementById('username-info').textContent=user.username;
+    if (filename === "index") {document.getElementById('username').textContent='Welcome, '+user.username;}
+    if (filename === "news") {document.getElementById('date').textContent=today.toLocaleDateString("en-US", options);}
+    
+    if (filename === "profile") {
+        document.getElementById('username-get').textContent="Name: "+user.username;
+        document.getElementById('profile-photo-get').src=user.avatar;
+        document.getElementById('permission-get').textContent="Permission: "+user.permission;
+        document.getElementById('userid-get').textContent="ID: "+user.id;
+    }
     document.getElementById('profile-photo').src=user.avatar;
+    document.getElementById('username-info').textContent=user.username;
     document.getElementById('permission').textContent=user.permission;
 })
 
 if (window.localStorage.getItem('data-theme') === 'dark') {
     document.body.classList.toggle('dark-theme-variables')
+    themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
+    themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
 }
 
-Guild.forEach(guild => {
-    document.getElementById("members").textContent=guild.members;
-    document.getElementById("experiences").textContent=guild.experiences;
-    document.getElementById("cash").textContent=guild.cash;
-    document.getElementById("guild-name").textContent="Dashboard - "+guild.name;
-})
 // PRELOAD
 setTimeout(() => {
   document.querySelectorAll('.bg').forEach((elBg) => elBg.classList.remove('bg'));
-}, 3000);
+}, 500);
+
+function reports() {
+    if (document.getElementById("reports").style.display==='none') {
+        document.getElementById("reports").style.display = 'block'
+    } else {
+        document.getElementById("reports").style.display = 'none'
+    }
+}

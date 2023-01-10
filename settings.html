@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DullionBot</title>
+    <!-- ICONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet">
+    <!-- STYLESHEET -->
+    <link href="./global.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+<!-------------------------- ASIDE -------------------------->
+        <aside>
+<!------------- TOP ------------->
+            <div class="top">
+                <div class="logo">
+                    <img loading="lazy" src="./logo.svg">
+                    <h2>Dullion<span class="primary">Bot</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div>
+            </div>
+<!------------- SIDEBAR ------------->
+            <div class="sidebar">
+                <a href="./index.html">
+                    <span class="material-symbols-sharp">home</span>
+                    <h3>Home</h3>
+                </a>
+                <a href="./dashboard.html">
+                      <span class="material-symbols-sharp">dashboard</span>
+                      <h3>Dashboard</h3>
+                </a>
+                <a href="./docs.html">
+                    <span class="material-symbols-sharp">integration_instructions</span>
+                    <h3>Docs</h3>
+                </a>
+                <a  href="./news.html">
+                    <span class="material-symbols-sharp">newspaper</span>
+                    <h3>News</h3>
+                    <span class="message-count">2</span>
+                </a>
+                <a href="./profile.html">
+                    <span class="material-symbols-sharp">person</span>
+                    <h3>My profile</h3>
+                </a>
+                <a class="active" href="./settings.html">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#reports" onClick="reports()">
+                    <span class="material-symbols-sharp">bug_report</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#logout">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+<!-------------------------- MAIN -------------------------->
+<main>
+    <div style='display: none;' class="reports" id="reports">
+        <div class="reports-div">
+            <form onsubmit="reports();">
+                <div class="top">
+                    <h1>Reports</h1>
+                    <div class="close" id="close-btn-form">
+                        <span class="material-symbols-sharp">close</span>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="title">Title</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="title" name="title" placeholder="Your bugs or problems...">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="Your Email..">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="category">Category</label>
+                  </div>
+                  <div class="col-75">
+                    <select id="category" name="category">
+                      <option value="bugs">Bugs</option>
+                      <option value="problems">Problems</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="subject">Subject</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+        </div>
+    </div>
+    <h1>Settings</h1>
+<!------------- CARDS ------------->
+    <div class="insights">
+      <div class="settings-color">
+        <span class="material-symbols-sharp">palette</span>
+        <h3>Color</h3>
+      </div>
+      <div class="settings-theme">
+        <span class="material-symbols-sharp">motion_mode</span>
+        <h3>Theme</h3>
+      </div>
+      <div class="settings-theme">
+        <span class="material-symbols-sharp">favorite</span>
+        <h3>Premium</h3>
+      </div>
+      <div class="settings-theme">
+        <span class="material-symbols-sharp">cookie</span>
+        <h3>Cookie</h3>
+      </div>
+      <div class="settings-theme">
+        <span class="material-symbols-sharp">logout</span>
+        <h3>Logout</h3>
+      </div>
+    </div>
+</main>
+<!-------------------------- RIGHTS -------------------------->
+<div class="right">
+<!------------- TOP ------------->
+    <div class="top">
+        <button id="menu-btn">
+            <span class="material-symbols-sharp">menu</span>
+        </button>
+        <div class="theme-toggler">
+            <span class="material-symbols-sharp active">light_mode</span>
+            <span class="material-symbols-sharp">dark_mode</span>
+        </div>
+        <div class="profile bg">
+            <div class="info">
+                <p>Hey, <b id='username-info'>Name</b></p>
+                <small class="text-muted" id="permission">Admin</small>
+            </div>
+            <div class="profile-photo">
+                <a href="#profile:id"><img loading="lazy" id='profile-photo' src="./profile-photo.svg"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <script src="./data.js"></script>
+    <script src="./global.js"></script>
+    <script src="./settings.js"></script>
+
+</body>
+</html>
