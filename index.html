@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DullionBot</title>
+    <!-- ICONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet">
+    <!-- STYLESHEET -->
+    <link href="./global.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+<!-------------------------- ASIDE -------------------------->
+        <aside>
+<!------------- TOP ------------->
+            <div class="top">
+                <div class="logo">
+                    <img loading="lazy" src="./logo.svg">
+                    <h2>Dullion<span class="primary">Bot</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div>
+            </div>
+<!------------- SIDEBAR ------------->
+            <div class="sidebar">
+                <a class="active" href="#dashboard">
+                      <span class="material-symbols-sharp">dashboard</span>
+                      <h3>Dashboard</h3>
+                </a>
+                <a href="#docs">
+                    <span class="material-symbols-sharp">integration_instructions</span>
+                    <h3>Docs</h3>
+                </a>
+                <a href="#news">
+                    <span class="material-symbols-sharp">newspaper</span>
+                    <h3>News</h3>
+                    <span class="message-count">2</span>
+                </a>
+                <a href="#profile:id">
+                    <span class="material-symbols-sharp">person</span>
+                    <h3>My profile</h3>
+                </a>
+                <a href="#settings">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#reports">
+                    <span class="material-symbols-sharp">bug_report</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#logout">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+<!-------------------------- MAIN -------------------------->
+        <main>
+            <h1 id="guild-name"></h1>
+<!------------- CARDS ------------->
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-symbols-sharp">group</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Members</h3>
+                            <h1 class="bg" id="members">0</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <div class="experience">
+                    <span class="material-symbols-sharp">science</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Experience</h3>
+                            <h1 class="bg" id="experiences">0</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div>
+                <div class="iconome">
+                    <span class="material-symbols-sharp">attach_money</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Cash</h3>
+                            <h1 class="bg" id="cash">0</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 hours</small>
+                </div> 
+            </div>
+<!------------- RECENT orders ------------->
+             <div class="recent-orders">
+                <h2>Recent Orders</h2>
+                <table class="bg">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <a href="#history:id">Show All</a>
+             </div>
+        </main>
+<!-------------------------- RIGHTS -------------------------->
+        <div class="right">
+<!------------- TOP ------------->
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">light_mode</span>
+                    <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+                <div class="profile bg">
+                    <div class="info">
+                        <p>Hey, <b id='username-info'>Name</b></p>
+                        <small class="text-muted" id="permission">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <a href="#profile:id"><img loading="lazy" id='profile-photo' src="./profile-photo.svg"></a>
+                    </div>
+                </div>
+            </div>
+<!------------- RECENT updates ------------->
+            <div class="recent-updates">
+                <h2>Recent Update</h2>
+                <div class="updates bg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./global.js"></script>
+    
+</body>
+</html>
