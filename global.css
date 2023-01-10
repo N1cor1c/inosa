@@ -198,7 +198,7 @@ aside .sidebara span {
 
 aside .sidebar a:last-child{
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     width: 100%;
 }
 
@@ -372,6 +372,7 @@ main .recent-orders a{
     display: flex;
     gap: 2rem;
     text-align: right;
+    margin-right: 2rem;
 }
 
 .right .recent-updates{
